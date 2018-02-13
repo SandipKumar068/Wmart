@@ -1,17 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlClient;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 using WMart.Models;
 
 namespace WMart.Controllers
 {
+
+    
     public class HomeController : Controller
     {
-        int a = 6;
+        private WMartEntities db = new WMartEntities();
+        
         // GET: Home
         public ActionResult Index()
         {
@@ -25,34 +30,54 @@ namespace WMart.Controllers
         {
             return View();
         }
+        
+
+
 
         [HttpPost]
-        public ActionResult RsvpForm(GuestResponse wmart)
+        public ActionResult RsvpForm([Bind(Include = "CId,Name,CEmail,CPhone,Status")] Attend attend)
         {
-            string constr = ConfigurationManager.ConnectionStrings["MvcConn"].ConnectionString;
-            using (SqlConnection con = new SqlConnection(constr))
+            if (string.IsNullOrEmpty(attend.Name))
             {
-                {
-                    string query = "INSERT INTO Attend(Name, CEmail, CPhone, Status) VALUES(@Name,@CEmail,@CPhone,@Status)";
-                    query += " SELECT SCOPE_IDENTITY()";
-                    using (SqlCommand cmd = new SqlCommand(query))
-                    {
-                        cmd.Connection = con;
-                        con.Open();
-                        cmd.Parameters.AddWithValue("@Name", wmart.Name);
-                        cmd.Parameters.AddWithValue("@CEmail", wmart.CEmail);
-                        cmd.Parameters.AddWithValue("@CPhone", wmart.CPhone);
-                        cmd.Parameters.AddWithValue("@Status", wmart.Status);
+                ModelState.AddModelError("Name", "Please enter Name");
+            }
+            if (string.IsNullOrEmpty(attend.CEmail))
+            {
+                ModelState.AddModelError("CEmail", "Please enter Email");
+            }
+            if (!string.IsNullOrEmpty(attend.CEmail))
+            {
+            Regex emailRegex = new Regex(".+@.+.com+");
+            if (!emailRegex.IsMatch(attend.CEmail))
+                ModelState.AddModelError("CEmail", "Please enter valid email");
+            }
+            if (string.IsNullOrEmpty(attend.CPhone))
+            {
+                ModelState.AddModelError("CPhone", "Please enter Phone");
+            }
+           
 
-                        wmart.Name = Convert.ToString(cmd.ExecuteScalar());
-                       
-                        con.Close();
-                    }
-                }
+
+
+            
+            if (ModelState.IsValid)
+            {
+                db.Attends.Add(attend);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+          
+                 
+            else
+            {
+                return View();
             }
 
-            return View(wmart);
+           
         }
+           
+           
+        
 
         public ActionResult Example()
         {
