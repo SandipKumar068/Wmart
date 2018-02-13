@@ -16,13 +16,13 @@ namespace WMart
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "RsvpForm", id = UrlParameter.Optional }
             );
-            routes.MapRoute(
-                name: "RsvpForm",
-                url: "Home/RsvpForm",
-                defaults: new { controller = "HomeController", action = "RsvpForm", id = UrlParameter.Optional }
-            );
+            //routes.MapRoute(
+            //    name: "RsvpForm",
+            //    url: "Home/RsvpForm",
+            //    defaults: new { controller = "Home", action = "RsvpForm", id = UrlParameter.Optional }
+            //);
         }
     }
 }

@@ -126,8 +126,26 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\1.jpg" />
+    <Content Include="Images\2.jpg" />
+    <Content Include="Images\3.jpg" />
+    <Content Include="Images\about-img.jpg" />
+    <Content Include="Images\about.jpg" />
+    <Content Include="Images\be-the-first-bg.jpg" />
+    <Content Include="Images\bg-01.jpg" />
+    <Content Include="Images\call-to-action.jpg" />
+    <Content Include="Images\counter-box.png" />
+    <Content Include="Images\header-bg.jpg" />
+    <Content Include="Images\header-overlay.png" />
+    <Content Include="Images\iphone.png" />
+    <Content Include="Images\logo-2.png" />
+    <Content Include="Images\logo.svg" />
+    <Content Include="Images\map.png" />
+    <Content Include="Images\press-01.jpg" />
+    <Content Include="Images\press-02.jpg" />
+    <Content Include="Images\Wmart.png" />
     <Content Include="Models\WmartModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>WmartModel.edmx</DependentUpon>
@@ -149,15 +167,38 @@
     <Content Include="Models\WmartModel.edmx.diagram">
       <DependentUpon>WmartModel.edmx</DependentUpon>
     </Content>
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="scripts\Images\logo.png" />
+    <Content Include="Images\logo.png" />
     <None Include="scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\jquery-1.11.0.min.js" />
     <Content Include="scripts\jquery-3.3.1.js" />
     <Content Include="scripts\jquery-3.3.1.min.js" />
     <Content Include="scripts\jquery-3.3.1.slim.js" />
     <Content Include="scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="scripts\jquery.form.js" />
+    <Content Include="scripts\jquery.lwtCountdown-1.0.js" />
+    <Content Include="scripts\jquery.nav.js" />
+    <Content Include="scripts\jquery.sticky.js" />
+    <Content Include="scripts\jquery.validate.min.js" />
+    <Content Include="scripts\main.js" />
+    <Content Include="scripts\main.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
-    <Content Include="Style\background.css" />
+    <Content Include="scripts\modernizr-2.6.2.min.js" />
+    <Content Include="scripts\modernizr-2.7.1.js" />
+    <Content Include="scripts\owl.carousel.min.js" />
+    <Content Include="scripts\plugins.js" />
+    <Content Include="scripts\wow.min.js" />
+    <Content Include="Style\animate.css" />
+    <Content Include="Style\bootstrap.min.css" />
+    <Content Include="Style\font-awesome.min.css" />
+    <Content Include="Style\main.css" />
+    <Content Include="Style\owl.carousel.css" />
+    <Content Include="Style\responsive.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
