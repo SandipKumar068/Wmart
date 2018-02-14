@@ -194,6 +194,7 @@
     <Content Include="scripts\plugins.js" />
     <Content Include="scripts\wow.min.js" />
     <Content Include="Style\animate.css" />
+    <Content Include="Style\background.css" />
     <Content Include="Style\bootstrap.min.css" />
     <Content Include="Style\font-awesome.min.css" />
     <Content Include="Style\main.css" />

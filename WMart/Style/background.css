@@ -1,0 +1,10 @@
+﻿body,
+html {
+    min-height: 100%;
+}
+
+body {
+    background:url(../Views/Home/Index.cshtml);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
